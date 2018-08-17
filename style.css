@@ -143,6 +143,7 @@ body{
   
   
   .Window{
+    --titleBarHeight : 45px;
     display: none;
     position: absolute;
     top: 0;
@@ -154,43 +155,79 @@ body{
     margin: auto;
   }
   
-  .closeButton{
-    height: 5%;
-    text-align: center;
+  .titleBar{
+    --closeButtonWidth:60px;
     background-color: rgba(255,255,255,0.8);
+    height: var(--titleBarHeight);
+    letter-spacing: -1em;
+  }
+  
+  .title{
+    letter-spacing: normal;
+    width: calc(100% - var(--closeButtonWidth));
+    height: 100%;
+    display: inline-block;
     user-select: none;
     font-size: 2em;
   }
   
-  .Window .content{
-    height: 95%;
+  .closeButton{
+    letter-spacing: normal;
+    width: var(--closeButtonWidth);
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    
+    user-select: none;
+    font-size: 2em;
+  }
+  
+  
+  .closeButton:hover{
+    animation-name: closeButtonHover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes  closeButtonHover{
+    100%{
+      background-color: rgba(255,0,0,0.8);
+      color: #FFF;
+    }
+  }
+  
+  .Contents{
+    height: calc(100% - var(--titleBarHeight));
     overflow: scroll;
     overflow-x: hidden;
-    
+    background-color: rgba(0,0,0,0.8);
+    overflow-wrap: break-word;
   }
   
-  .content h1{
-    
-  }
   
   .content h2{
-    
+    display: inline;
+    margin: 0px;
+    color: #FFF;
   }
   
   .content p{
-    
+    color: #FFF;
   }
   
-  .window--profile .content{
-    background-color: rgba(255,143,143,0.8);
+  .contents--profile .content::before{
+    content: "[neoti@github.io ~/about] $ ";
+    color: #60FF60;
   }
   
-  .window--programming .content{
-    background-color: rgba(0, 133, 255, 0.8);
+  .contents--programming .content::before{
+    content: "[neoti@github.io ~/programming] $ ";
+    color: #60FF60;
   }
   
-  .window--drawing .content{
-    background-color: rgba(143,255,143,0.8);;
+  .contents--drawing .content::before{
+    content: "[neoti@github.io ~/drawing] $ ";
+    color: #60FF60;
   }
-
+  
 }

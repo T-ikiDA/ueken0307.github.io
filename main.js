@@ -19,6 +19,6 @@ display = (name)=>{
   element[0].style.display = 'block';
 }
 
-windowsClose = (a)=>{
-  a.parentNode.style.display = "none";
+windowsClose = (window)=>{
+  window.style.display = "none";
 }
