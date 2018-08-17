@@ -1,0 +1,196 @@
+:root{
+  --nSize:100px;
+}
+
+body{
+  background-color: #AAA;
+  padding: 0%;
+  margin: 0%;
+  overflow: hidden;
+}
+
+@media screen and (max-width:768px){
+  .Item{
+    display: none;
+  }
+  .Window{
+    display: none;
+  }
+  
+  #smartphone{
+    font-size: 5em;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width:768px){
+  #smartphone{
+    display: none;
+  }
+  
+  .Item{
+    position: absolute;
+    cursor: pointer;
+    width: var(--nSize);
+    height: var(--nSize);
+  }
+  
+  .Item a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .item--profile{
+    --size:150px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: calc(var(--size)/2);
+    left: calc(50% -  var(--size)/2);
+    top: calc(50% -  var(--size)/2);
+    
+    
+    background-image: url('./icon.jpg');
+    background-size: contain;
+  }
+  
+  .item--programming{
+    --left:75%;
+    --top:35%;
+    
+    left:calc(var(--left) - var(--nSize));
+    top:calc(var(--top) - var(--nSize));
+    
+    background-image: url('./PC.png');
+    background-size: contain;
+  }
+  
+  .item--drawing{
+    --left:70%;
+    --top:55%;
+    
+    left:calc(var(--left) - var(--nSize));
+    top:calc(var(--top) - var(--nSize));
+    
+    background-image: url('./draw.png');
+    background-size: contain;
+  }
+  
+  .item--github{
+    --left:78%;
+    --top:70%;
+    
+    left:calc(var(--left) - var(--nSize));
+    top:calc(var(--top) - var(--nSize));
+    
+    background-image: url('./GitHub-Mark-120px-plus.png');
+    background-size: contain;
+  }
+  
+  .item--qiita{
+    --left:30%;
+    --top:60%;
+    
+    left:calc(var(--left) - var(--nSize));
+    top:calc(var(--top) - var(--nSize));
+    border-radius: calc(var(--nSize)/2);
+    
+    background-color: #59bb0c;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: white;
+    font-size: 4em;
+    
+    user-select: none;
+  }
+  
+  .item--twitter{
+    --left:43%;
+    --top:30%;
+    
+    left:calc(var(--left) - var(--nSize));
+    top:calc(var(--top) - var(--nSize));
+    border-radius: calc(var(--nSize)/2);
+    
+    background-image: url('./Twitter_Logo_WhiteOnBlue.png');
+    background-size: contain;
+  }
+  
+  .item--pixiv{
+    --left:38%;
+    --top:80%;
+    
+    left:calc(var(--left) - var(--nSize));
+    top:calc(var(--top) - var(--nSize));
+    border-radius: calc(var(--nSize)/2);
+    
+    background-color: #009cff;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: white;
+    font-size: 4em;
+    
+    user-select: none;
+  }
+  
+  
+  .Window{
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+  }
+  
+  .closeButton{
+    height: 5%;
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    user-select: none;
+    font-size: 2em;
+  }
+  
+  .Window .content{
+    height: 95%;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+  }
+  
+  .content h1{
+    
+  }
+  
+  .content h2{
+    
+  }
+  
+  .content p{
+    
+  }
+  
+  .window--profile .content{
+    background-color: rgba(255,143,143,0.8);
+  }
+  
+  .window--programming .content{
+    background-color: rgba(0, 133, 255, 0.8);
+  }
+  
+  .window--drawing .content{
+    background-color: rgba(143,255,143,0.8);;
+  }
+
+}
