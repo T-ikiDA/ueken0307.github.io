@@ -1,5 +1,8 @@
 window.onload = ()=>{
-  document.addEventListener("mousemove",fn);
+  if(769 <= window.innerWidth){
+    //widhtが768pxのときだけマウス追従有効化
+    document.addEventListener("mousemove",fn);
+  }
 }
 
 fn = (e)=>{
