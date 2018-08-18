@@ -10,24 +10,10 @@ body{
 }
 
 @media screen and (max-width:768px){
-  .Item{
-    display: none;
-  }
-  .Window{
-    display: none;
-  }
   
-  #smartphone{
-    font-size: 5em;
-    text-align: center;
-  }
 }
 
 @media screen and (min-width:769px){
-  #smartphone{
-    display: none;
-  }
-  
   .Item{
     position: absolute;
     cursor: pointer;
