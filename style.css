@@ -9,122 +9,199 @@ body{
   overflow: hidden;
 }
 
-@media screen and (max-width:768px){
-  
+.Item{
+  position: absolute;
+  cursor: pointer;
+  width: var(--nSize);
+  height: var(--nSize);
 }
 
-@media screen and (min-width:769px){
-  .Item{
-    position: absolute;
-    cursor: pointer;
-    width: var(--nSize);
-    height: var(--nSize);
-  }
+.Item a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.item--profile{
+  --size:150px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: calc(var(--size)/2);
   
-  .Item a{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  background-image: url('./icon.jpg');
+  background-size: contain;
+}
+
+.item--programming{
+  background-image: url('./PC.png');
+  background-size: contain;
+}
+
+.item--drawing{
+  background-image: url('./draw.png');
+  background-size: contain;
+}
+
+.item--github{
+  background-image: url('./GitHub-Mark-120px-plus.png');
+  background-size: contain;
+}
+
+.item--qiita{
+  border-radius: calc(var(--nSize)/2);
+  
+  background-color: #59bb0c;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: white;
+  font-size: 4em;
+  
+  user-select: none;
+}
+
+.item--twitter{
+  border-radius: calc(var(--nSize)/2);
+  
+  background-image: url('./Twitter_Logo_WhiteOnBlue.png');
+  background-size: contain;
+}
+
+.item--pixiv{
+  border-radius: calc(var(--nSize)/2);
+  
+  background-color: #009cff;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: white;
+  font-size: 4em;
+  
+  user-select: none;
+}
+
+/*==============================SmartPhone=================================*/
+
+@media screen and (max-width:768px){
+  .Window{
+    display: none;
   }
   
   .item--profile{
-    --size:150px;
-    width: var(--size);
-    height: var(--size);
-    border-radius: calc(var(--size)/2);
+    left: calc(25% -  var(--size)/2);
+    top: calc(15% -  var(--size)/2);
+  }
+  
+  .item--programming{
+    --left:25%;
+    --top:40%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--drawing{
+    --left:75%;
+    --top:40%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--github{
+    --left:75%;
+    --top:60%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--qiita{
+    --left:25%;
+    --top:80%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--twitter{
+    --left:25%;
+    --top:60%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--pixiv{
+    --left:75%;
+    --top:80%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+}
+
+/*=================================PC=====================================*/
+
+@media screen and (min-width:769px){
+  
+  .item--profile{
     left: calc(50% -  var(--size)/2);
     top: calc(50% -  var(--size)/2);
-    
-    
-    background-image: url('./icon.jpg');
-    background-size: contain;
   }
   
   .item--programming{
     --left:75%;
     --top:35%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    
-    background-image: url('./PC.png');
-    background-size: contain;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--drawing{
     --left:70%;
     --top:55%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    
-    background-image: url('./draw.png');
-    background-size: contain;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--github{
     --left:78%;
     --top:70%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    
-    background-image: url('./GitHub-Mark-120px-plus.png');
-    background-size: contain;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--qiita{
     --left:30%;
     --top:60%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    border-radius: calc(var(--nSize)/2);
-    
-    background-color: #59bb0c;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    color: white;
-    font-size: 4em;
-    
-    user-select: none;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--twitter{
     --left:43%;
     --top:30%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    border-radius: calc(var(--nSize)/2);
-    
-    background-image: url('./Twitter_Logo_WhiteOnBlue.png');
-    background-size: contain;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--pixiv{
     --left:38%;
     --top:80%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    border-radius: calc(var(--nSize)/2);
-    
-    background-color: #009cff;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    color: white;
-    font-size: 4em;
-    
-    user-select: none;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   
