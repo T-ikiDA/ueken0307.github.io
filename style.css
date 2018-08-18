@@ -9,222 +9,299 @@ body{
   overflow: hidden;
 }
 
-@media screen and (max-width:768px){
-  .Item{
-    display: none;
-  }
-  .Window{
-    display: none;
-  }
+.Item{
+  position: absolute;
+  cursor: pointer;
+  width: var(--nSize);
+  height: var(--nSize);
+}
+
+.Item a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.item--profile{
+  --size:150px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: calc(var(--size)/2);
   
-  #smartphone{
-    font-size: 5em;
-    text-align: center;
+  background-image: url('./icon.jpg');
+  background-size: contain;
+}
+
+.item--programming{
+  background-image: url('./PC.png');
+  background-size: contain;
+}
+
+.item--drawing{
+  background-image: url('./draw.png');
+  background-size: contain;
+}
+
+.item--github{
+  background-image: url('./GitHub-Mark-120px-plus.png');
+  background-size: contain;
+}
+
+.item--qiita{
+  border-radius: calc(var(--nSize)/2);
+  
+  background-color: #59bb0c;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: white;
+  font-size: 4em;
+  
+  user-select: none;
+}
+
+.item--twitter{
+  border-radius: calc(var(--nSize)/2);
+  
+  background-image: url('./Twitter_Logo_WhiteOnBlue.png');
+  background-size: contain;
+}
+
+.item--pixiv{
+  border-radius: calc(var(--nSize)/2);
+  
+  background-color: #009cff;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: white;
+  font-size: 4em;
+  
+  user-select: none;
+}
+
+.Window{
+  --titleBarHeight : 45px;
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.titleBar{
+  --closeButtonWidth:60px;
+  background-color: rgba(255,255,255,0.8);
+  height: var(--titleBarHeight);
+  letter-spacing: -1em;
+}
+
+.title{
+  letter-spacing: normal;
+  width: calc(100% - var(--closeButtonWidth));
+  height: 100%;
+  display: inline-block;
+  user-select: none;
+  font-size: 2em;
+}
+
+.closeButton{
+  letter-spacing: normal;
+  width: var(--closeButtonWidth);
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  
+  user-select: none;
+  font-size: 2em;
+}
+
+
+.closeButton:hover{
+  animation-name: closeButtonHover;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes  closeButtonHover{
+  100%{
+    background-color: rgba(255,0,0,0.8);
+    color: #FFF;
   }
 }
 
-@media screen and (min-width:768px){
-  #smartphone{
-    display: none;
-  }
-  
-  .Item{
-    position: absolute;
-    cursor: pointer;
-    width: var(--nSize);
-    height: var(--nSize);
-  }
-  
-  .Item a{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+.Contents{
+  height: calc(100% - var(--titleBarHeight));
+  overflow: scroll;
+  overflow-x: hidden;
+  background-color: rgba(0,0,0,0.8);
+  overflow-wrap: break-word;
+}
+
+.content h2{
+  display: inline;
+  margin: 0px;
+  color: #FFF;
+}
+
+.content p{
+  color: #FFF;
+}
+
+/*==============================SmartPhone=================================*/
+
+@media screen and (max-width:768px){
   
   .item--profile{
-    --size:150px;
-    width: var(--size);
-    height: var(--size);
-    border-radius: calc(var(--size)/2);
+    left: calc(25% -  var(--size)/2);
+    top: calc(15% -  var(--size)/2);
+  }
+  
+  .item--programming{
+    --left:25%;
+    --top:40%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--drawing{
+    --left:75%;
+    --top:40%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--github{
+    --left:75%;
+    --top:60%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--qiita{
+    --left:25%;
+    --top:80%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--twitter{
+    --left:25%;
+    --top:60%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .item--pixiv{
+    --left:75%;
+    --top:80%;
+    
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
+  }
+  
+  .contents--profile .content::before{
+    content: "[neoti@github.io ~/about] $ \A";
+    color: #60FF60;
+    white-space: pre-wrap;
+  }
+
+  .contents--programming .content::before{
+    content: "[neoti@github.io ~/programming] $ \A";
+    color: #60FF60;
+    white-space: pre-wrap;
+  }
+
+  .contents--drawing .content::before{
+    content: "[neoti@github.io ~/drawing] $ \A";
+    color: #60FF60;
+    white-space: pre-wrap;
+  }
+  
+}
+
+/*=================================PC=====================================*/
+
+@media screen and (min-width:769px){
+  
+  .item--profile{
     left: calc(50% -  var(--size)/2);
     top: calc(50% -  var(--size)/2);
-    
-    
-    background-image: url('./icon.jpg');
-    background-size: contain;
   }
   
   .item--programming{
     --left:75%;
     --top:35%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    
-    background-image: url('./PC.png');
-    background-size: contain;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--drawing{
     --left:70%;
     --top:55%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    
-    background-image: url('./draw.png');
-    background-size: contain;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--github{
     --left:78%;
     --top:70%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    
-    background-image: url('./GitHub-Mark-120px-plus.png');
-    background-size: contain;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--qiita{
     --left:30%;
     --top:60%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    border-radius: calc(var(--nSize)/2);
-    
-    background-color: #59bb0c;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    color: white;
-    font-size: 4em;
-    
-    user-select: none;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--twitter{
     --left:43%;
     --top:30%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    border-radius: calc(var(--nSize)/2);
-    
-    background-image: url('./Twitter_Logo_WhiteOnBlue.png');
-    background-size: contain;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .item--pixiv{
     --left:38%;
     --top:80%;
     
-    left:calc(var(--left) - var(--nSize));
-    top:calc(var(--top) - var(--nSize));
-    border-radius: calc(var(--nSize)/2);
-    
-    background-color: #009cff;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    color: white;
-    font-size: 4em;
-    
-    user-select: none;
-  }
-  
-  
-  .Window{
-    --titleBarHeight : 45px;
-    display: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-  }
-  
-  .titleBar{
-    --closeButtonWidth:60px;
-    background-color: rgba(255,255,255,0.8);
-    height: var(--titleBarHeight);
-    letter-spacing: -1em;
-  }
-  
-  .title{
-    letter-spacing: normal;
-    width: calc(100% - var(--closeButtonWidth));
-    height: 100%;
-    display: inline-block;
-    user-select: none;
-    font-size: 2em;
-  }
-  
-  .closeButton{
-    letter-spacing: normal;
-    width: var(--closeButtonWidth);
-    height: 100%;
-    display: inline-block;
-    text-align: center;
-    
-    user-select: none;
-    font-size: 2em;
-  }
-  
-  
-  .closeButton:hover{
-    animation-name: closeButtonHover;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes  closeButtonHover{
-    100%{
-      background-color: rgba(255,0,0,0.8);
-      color: #FFF;
-    }
-  }
-  
-  .Contents{
-    height: calc(100% - var(--titleBarHeight));
-    overflow: scroll;
-    overflow-x: hidden;
-    background-color: rgba(0,0,0,0.8);
-    overflow-wrap: break-word;
-  }
-  
-  
-  .content h2{
-    display: inline;
-    margin: 0px;
-    color: #FFF;
-  }
-  
-  .content p{
-    color: #FFF;
+    left:calc(var(--left) - var(--nSize)/2);
+    top:calc(var(--top) - var(--nSize)/2);
   }
   
   .contents--profile .content::before{
     content: "[neoti@github.io ~/about] $ ";
     color: #60FF60;
   }
-  
+
   .contents--programming .content::before{
     content: "[neoti@github.io ~/programming] $ ";
     color: #60FF60;
   }
-  
+
   .contents--drawing .content::before{
     content: "[neoti@github.io ~/drawing] $ ";
     color: #60FF60;

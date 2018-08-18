@@ -1,5 +1,22 @@
 window.onload = ()=>{
-  document.addEventListener("mousemove",fn);
+  if(769 <= window.innerWidth){
+    //widhtが768pxのときだけマウス追従有効化
+    document.addEventListener("mousemove",fn);
+  }
+}
+
+window.onresize = ()=>{
+  if(769 <= window.innerWidth){
+    //widhtが768pxのときだけマウス追従有効化
+    document.addEventListener("mousemove",fn);
+  }else{
+    document.removeEventListener("mousemove",fn);
+    let elements = document.getElementsByClassName('Item');
+    
+    for(let i=0;i<elements.length;i++){
+      elements[i].style.transform = 'translate(0px,0px)';
+    }
+  }
 }
 
 fn = (e)=>{
